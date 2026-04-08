@@ -2261,6 +2261,33 @@
     }
 
     /* =============================================
+       VIDEO TESTIMONIALS
+    ============================================= */
+    .video-testimonials-scroll::-webkit-scrollbar {
+      height: 6px;
+    }
+    .video-testimonials-scroll::-webkit-scrollbar-track {
+      background: rgba(255,255,255,0.1);
+      border-radius: 3px;
+    }
+    .video-testimonials-scroll::-webkit-scrollbar-thumb {
+      background: var(--accent);
+      border-radius: 3px;
+    }
+    .video-testimonials-scroll {
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent) rgba(255,255,255,0.1);
+    }
+
+    @media (max-width: 768px) {
+      .video-testimonials-scroll {
+        justify-content: flex-start;
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+
+    /* =============================================
        FAQ
     ============================================= */
     .faq {
