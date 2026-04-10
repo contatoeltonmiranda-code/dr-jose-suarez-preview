@@ -2338,15 +2338,25 @@
 
     .faq-question:focus,
     .faq-question:active,
-    .faq-question:focus-visible {
-      outline: none;
-      background: transparent;
-      color: var(--text-primary);
+    .faq-question:focus-visible,
+    .faq-question:hover,
+    .faq-item.active .faq-question,
+    .faq-item .faq-question,
+    button.faq-question {
+      outline: none !important;
+      background: transparent !important;
+      background-color: transparent !important;
+      color: var(--text-primary) !important;
+      box-shadow: none !important;
+      border: none !important;
     }
 
     .faq-item.active .faq-question {
-      background: transparent;
-      color: var(--primary);
+      color: var(--primary) !important;
+    }
+
+    .faq-question:hover {
+      color: var(--primary) !important;
     }
 
     .faq-icon {
