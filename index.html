@@ -2336,6 +2336,19 @@
       color: var(--primary);
     }
 
+    .faq-question:focus,
+    .faq-question:active,
+    .faq-question:focus-visible {
+      outline: none;
+      background: transparent;
+      color: var(--text-primary);
+    }
+
+    .faq-item.active .faq-question {
+      background: transparent;
+      color: var(--primary);
+    }
+
     .faq-icon {
       width: 24px;
       height: 24px;
@@ -4015,8 +4028,8 @@
       <div class="footer-bottom">
         <p>&copy; 2024 Dr. José Suárez. Todos los derechos reservados.</p>
         <div class="footer-legal">
-          <a href="#">Politica de Privacidad</a>
-          <a href="#">Terminos y Condiciones</a>
+          <a href="https://drjosesuarez.com.co/politica-de-privacidad/">Política de Privacidad</a>
+          <a href="https://drjosesuarez.com.co/terminos-y-condiciones/">Términos y Condiciones</a>
         </div>
       </div>
     </div>
