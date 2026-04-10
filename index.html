@@ -2622,32 +2622,16 @@
       transform: translateY(0);
     }
 
-    /* Hero mobile: imagem como bloco acima do texto, fundo solido */
-    .hero-mobile-img {
-      display: none;
-    }
-
+    /* Hero mobile: trocar background e dar margem no badge */
     @media (max-width: 968px) {
       .hero {
-        background-image: none;
-        background-color: var(--bg-dark);
-        min-height: auto;
-        padding-top: 80px;
-        padding-bottom: var(--space-16);
+        background-image: url('images/hero-mobile.png');
+        background-size: cover;
+        background-position: top center;
       }
 
-      .hero-mobile-img {
-        display: block;
-        width: 100%;
-        margin-bottom: var(--space-8);
-        border-radius: var(--radius-lg);
-        overflow: hidden;
-      }
-
-      .hero-mobile-img img {
-        width: 100%;
-        height: auto;
-        display: block;
+      .hero-badge {
+        margin-top: 150px;
       }
     }
 
@@ -3099,9 +3083,6 @@
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <div class="hero-mobile-img">
-          <img src="images/hero-mobile.png" alt="Dr. José Suárez - Cirugía Plástica">
-        </div>
         <div class="hero-text">
           <div class="hero-badge">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
