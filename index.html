@@ -100,6 +100,7 @@
 
     html {
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
     body {
@@ -107,6 +108,7 @@
       line-height: 1.6;
       color: var(--text-primary);
       background: var(--bg-light);
+      overflow-x: hidden;
     }
 
     img {
@@ -2619,6 +2621,434 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* =============================================
+       HERO MOBILE IMAGE
+    ============================================= */
+    .hero-mobile-image {
+      display: none;
+    }
+
+    @media (max-width: 968px) {
+      .hero-mobile-image {
+        display: block;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto 32px auto;
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+      }
+
+      .hero-mobile-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: var(--radius-xl);
+      }
+    }
+
+    /* =============================================
+       MOBILE RESPONSIVENESS FIXES
+    ============================================= */
+
+    /* --- Global overflow safety --- */
+    @media (max-width: 968px) {
+      .container {
+        padding: 0 16px;
+        max-width: 100%;
+      }
+
+      .section {
+        padding: var(--space-16) 0;
+      }
+    }
+
+    /* --- Nav mobile menu --- */
+    @media (max-width: 768px) {
+      .nav-links.mobile-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-dark);
+        padding: 24px;
+        gap: 16px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      }
+
+      .nav-links.mobile-open .nav-cta {
+        width: 100%;
+        text-align: center;
+      }
+
+      .nav-mobile-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      .nav-mobile-toggle.active span:nth-child(2) {
+        opacity: 0;
+      }
+      .nav-mobile-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+    }
+
+    /* --- Hero section mobile --- */
+    @media (max-width: 968px) {
+      .hero {
+        padding: 100px 0 80px;
+        min-height: auto;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-headline .headline-main,
+      .hero h1 span {
+        font-size: clamp(32px, 8vw, 48px) !important;
+      }
+
+      .hero-headline .headline-sub,
+      .hero h1 span:last-child {
+        font-size: clamp(24px, 6vw, 36px) !important;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero-ctas .btn {
+        width: 100%;
+        max-width: 360px;
+        justify-content: center;
+      }
+
+      .hero-trust {
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .hero-vsl {
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+    }
+
+    /* --- Hero marquee mobile --- */
+    @media (max-width: 768px) {
+      .hero-marquee {
+        overflow: hidden;
+      }
+
+      .marquee-content {
+        gap: 40px;
+        padding-right: 40px;
+      }
+
+      .marquee-item {
+        font-size: 10px;
+        letter-spacing: 2px;
+      }
+    }
+
+    /* --- Pain points mobile --- */
+    @media (max-width: 768px) {
+      .pain-card {
+        padding-left: 80px;
+        padding-right: 16px;
+        min-height: 72px;
+      }
+
+      .pain-number {
+        font-size: 72px;
+        left: 4px;
+      }
+
+      .pain-image-container {
+        min-height: 300px;
+      }
+
+      .pain-image-container::before,
+      .pain-image-container::after {
+        display: none;
+      }
+    }
+
+    /* --- Diferenciais mobile --- */
+    @media (max-width: 768px) {
+      .diff-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+      }
+    }
+
+    /* --- Bento grid mobile --- */
+    @media (max-width: 768px) {
+      .bento-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .bento-card-large {
+        grid-row: span 1;
+        min-height: 350px;
+      }
+
+      .bento-card-wide {
+        grid-column: span 1;
+      }
+
+      .bento-tech .bento-content {
+        max-width: 100%;
+      }
+
+      .bento-tech .bento-image {
+        opacity: 0.15;
+        width: 100%;
+      }
+
+      .bento-cta-glass {
+        width: calc(100% + 48px) !important;
+        margin-left: -24px;
+        margin-right: -24px;
+        padding: var(--space-4);
+      }
+
+      .bento-cta-glass h5 {
+        font-size: 20px !important;
+        white-space: normal;
+      }
+
+      .bento-card {
+        padding: var(--space-6);
+      }
+    }
+
+    /* --- Procedimientos mobile --- */
+    @media (max-width: 768px) {
+      .proc-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .proc-cta {
+        padding-bottom: 40px;
+      }
+    }
+
+    /* --- Valoracion box mobile --- */
+    @media (max-width: 968px) {
+      .valoracion-box {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+        padding: 32px 20px !important;
+        transform: translateY(0) !important;
+        margin-bottom: 0 !important;
+      }
+
+      .valoracion-box .valoracion-text {
+        text-align: center;
+      }
+
+      .valoracion-box .valoracion-text h2 br {
+        display: none;
+      }
+
+      .valoracion-box > div:last-child {
+        flex-direction: column !important;
+        gap: 20px !important;
+        align-items: center !important;
+      }
+
+      .valoracion-box > div:last-child > div[style*="width: 2px"] {
+        width: 60px !important;
+        min-width: 60px !important;
+        height: 2px !important;
+        background: linear-gradient(to right, transparent, #D4C4A8 20%, #D4C4A8 80%, transparent) !important;
+      }
+
+      .valoracion-box > div:last-child > div:not([style*="width: 2px"]) {
+        text-align: center !important;
+      }
+    }
+
+    /* --- Galeria mobile --- */
+    @media (max-width: 600px) {
+      .galeria-wrapper {
+        height: 400px;
+        overflow: hidden;
+      }
+
+      .galeria-container {
+        gap: 10px;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .galeria-column {
+        width: 110px;
+      }
+
+      .galeria-item img {
+        height: 160px;
+      }
+
+      /* Remove 3D rotations on mobile to prevent overflow */
+      .galeria-column:nth-child(1) .galeria-item,
+      .galeria-column:nth-child(2) .galeria-item,
+      .galeria-column:nth-child(3) .galeria-item {
+        transform: none;
+      }
+    }
+
+    /* --- Dr. Jose section mobile --- */
+    @media (max-width: 768px) {
+      .dr-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dr-image {
+        height: 350px;
+      }
+
+      .dr-content {
+        padding: 32px 16px;
+      }
+
+      .dr-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-3);
+      }
+
+      .dr-stat {
+        padding: var(--space-4);
+      }
+
+      .dr-stat-number {
+        font-size: 28px;
+      }
+
+      .dr-stat-label {
+        font-size: 11px;
+      }
+    }
+
+    /* --- Process section mobile --- */
+    @media (max-width: 768px) {
+      .process-container {
+        padding: var(--space-6) var(--space-4);
+      }
+
+      .process-step p {
+        max-width: none;
+      }
+    }
+
+    /* --- Testimonios / Reviews mobile --- */
+    @media (max-width: 768px) {
+      .test-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .reviews-carousel-wrapper {
+        overflow: hidden;
+      }
+
+      .review-card {
+        width: 280px;
+      }
+
+      .reviews-carousel-wrapper::before,
+      .reviews-carousel-wrapper::after {
+        width: 60px;
+      }
+    }
+
+    /* --- Video testimonials mobile --- */
+    @media (max-width: 768px) {
+      .video-testimonials-scroll {
+        justify-content: flex-start;
+        padding-left: 16px;
+        padding-right: 16px;
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: thin;
+      }
+
+      .video-testimonial-item > div {
+        width: 160px !important;
+      }
+    }
+
+    /* --- CTA Final mobile --- */
+    @media (max-width: 768px) {
+      .cta-final {
+        padding: var(--space-16) 0;
+      }
+
+      .cta-final::before {
+        width: 300px;
+        height: 300px;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cta-buttons .btn {
+        width: 100%;
+        max-width: 360px;
+      }
+    }
+
+    /* --- Footer mobile --- */
+    @media (max-width: 768px) {
+      .footer {
+        padding: var(--space-12) 0 var(--space-6);
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+        text-align: center;
+      }
+
+      .footer-brand p {
+        max-width: none;
+      }
+
+      .footer-social {
+        justify-content: center;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-3);
+      }
+
+      .footer-legal {
+        justify-content: center;
+        gap: var(--space-4);
+      }
+    }
+
+    /* --- Buttons: ensure touch target on mobile --- */
+    @media (max-width: 768px) {
+      .btn {
+        min-height: 48px;
+        padding: 14px 24px;
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -2656,6 +3086,10 @@
     <div class="container">
       <div class="hero-content">
         <div class="hero-text">
+          <!-- Hero Mobile Image -->
+          <div class="hero-mobile-image">
+            <img src="images/hero-mobile.png" alt="Dr. Jos&eacute; Su&aacute;rez - Cirug&iacute;a Pl&aacute;stica en Bogot&aacute;">
+          </div>
           <div class="hero-badge">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
@@ -3611,6 +4045,24 @@
         nav.classList.remove('scrolled');
       }
     });
+
+    // Nav mobile toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        navLinks.classList.toggle('mobile-open');
+      });
+
+      // Close menu when clicking a link
+      navLinks.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
+        link.addEventListener('click', () => {
+          navToggle.classList.remove('active');
+          navLinks.classList.remove('mobile-open');
+        });
+      });
+    }
 
     // FAQ accordion
     document.querySelectorAll('.faq-question').forEach(button => {
